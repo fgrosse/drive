@@ -580,7 +580,7 @@ Do a two-way diff (will also locate files missing on either side)
 Same as above, but include subfolders 
 
 ```shell
-~/MyDrive/folder$ diff <(drive md5sum -r) <(find * -type f | sort | xargs md5sum)
+~/MyDrive/folder$ diff <(drive md5sum -r) <(find * -type f -print0 | sort | xargs -0 md5sum)
 ```
 
 Compare across two different Drive accounts, including subfolders
